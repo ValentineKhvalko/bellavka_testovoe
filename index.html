@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bellavka</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+</head>
+<body>
+  <div class="header">
+    <ul class="nav">
+      <li class="nav__li nav__li-top">Топ продаж</li>
+      <li class="nav__li nav__li-news">Новинки</li>
+      <li class="nav__li nav__li-models">
+        Unsere Modelle
+        <ul class="dropdown-menu">
+          <li class="dropdown-menu__li">Kompaktwagen</li>
+          <li class="dropdown-menu__li">Limousinen</li>
+          <li class="dropdown-menu__li">SUVs</li>
+          <li class="dropdown-menu__li">T-Modelle / Kombis</li>
+          <li class="dropdown-menu__li">Coupés</li>
+          <li class="dropdown-menu__li">Cabriolets & Roadster</li>
+          <li class="dropdown-menu__li">Vans</li>
+          <li class="dropdown-menu__li">Mercedes-AMG</li>
+          <li class="dropdown-menu__li">Mercedes-Maybach</li>
+        </ul>
+      </li>
+    </ul>
+    <img src="./assets/img/logo1.png" class="header__logo"></img>
+    <div class="tool-bar">
+      <div class="language-select">
+        <div class="language-select__current-flag"></div>
+        <svg width="5" height="10" viewBox="0 0 5 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.620372 8.6746C0.440661 8.88427 0.464941 9.19992 0.674604 9.37963C0.884267 9.55934 1.19992 9.53506 1.37963 9.3254L0.620372 8.6746ZM4.42857 5L4.8082 5.3254C4.9687 5.13815 4.9687 4.86185 4.8082 4.6746L4.42857 5ZM1.37963 0.674603C1.19992 0.464941 0.884267 0.44066 0.674604 0.620371C0.464941 0.800082 0.44066 1.11573 0.620371 1.3254L1.37963 0.674603ZM1.37963 9.3254L4.8082 5.3254L4.04894 4.6746L0.620372 8.6746L1.37963 9.3254ZM4.8082 4.6746L1.37963 0.674603L0.620371 1.3254L4.04894 5.3254L4.8082 4.6746Z" fill="#1F1F1F"/>
+        </svg>
+        <ul class="language-select__dropdown-menu">
+          <li class="language-select__dropdown-menu__li" id="BY">
+            <img class="language-select__dropdown-menu__img" src='assets/img/byFlag.png'>
+            <p>BY</p>
+          </li>
+          <li class="language-select__dropdown-menu__li" id="RU">
+            <img class="language-select__dropdown-menu__img" src='assets/img/ruFlag.png'>
+            <p>RU</p>
+          </li>
+          <li class="language-select__dropdown-menu__li" id="UA">
+            <img class="language-select__dropdown-menu__img" src='assets/img/uaFlag.png'>
+            <p>UA</p>
+          </li>
+          <li class="language-select__dropdown-menu__li" id="KZ">
+            <img class="language-select__dropdown-menu__img" src='assets/img/kzFlag.png'>
+            <p>KZ</p>
+          </li>
+          <li class="language-select__dropdown-menu__li" id="USA">
+            <img class="language-select__dropdown-menu__img" src='assets/img/usaFlag.png'>
+            <p>USA</p>
+          </li>
+        </ul>
+      </div>
+      <div class="search">
+        <input class="search__input" placeholder="Поиск">
+        <div class="search__magnifier">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.5528 12.7518L10.2208 9.28631C11.0775 8.26788 11.5469 6.98648 11.5469 5.65249C11.5469 2.53576 9.01117 0 5.89444 0C2.7777 0 0.241943 2.53576 0.241943 5.65249C0.241943 8.76923 2.7777 11.305 5.89444 11.305C7.0645 11.305 8.17952 10.9521 9.13282 10.2821L12.4902 13.7739C12.6305 13.9196 12.8192 14 13.0215 14C13.2129 14 13.3946 13.927 13.5324 13.7943C13.8254 13.5124 13.8347 13.045 13.5528 12.7518ZM5.89444 1.47456C8.1982 1.47456 10.0724 3.34873 10.0724 5.65249C10.0724 7.95625 8.1982 9.83043 5.89444 9.83043C3.59068 9.83043 1.71651 7.95625 1.71651 5.65249C1.71651 3.34873 3.59068 1.47456 5.89444 1.47456Z" fill="#1F1F1F"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner">
+    <span class="banner__sale">Sale</span>
+    <span class="banner__percent">10%</span>
+  </div>
+  <div class="main">
+    <div class="mercedes-amg-container">
+      <div class="mercedes-amg-container__header">
+        <h2>Mercedes amg</h2>
+        <div class="mercedes-amg-container__line line"></div>
+        <div class="mercedes-amg-container__crosses crosses">
+          <svg width="12" class="mercedes-amg-container__prev-arrow prev-arrow" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM1 11L0.292893 10.2929C-0.0976313 10.6834 -0.0976313 11.3166 0.292893 11.7071L1 11ZM10.2929 21.7071C10.6834 22.0976 11.3166 22.0976 11.7071 21.7071C12.0976 21.3166 12.0976 20.6834 11.7071 20.2929L10.2929 21.7071ZM10.2929 0.292893L0.292893 10.2929L1.70711 11.7071L11.7071 1.70711L10.2929 0.292893ZM0.292893 11.7071L10.2929 21.7071L11.7071 20.2929L1.70711 10.2929L0.292893 11.7071Z" fill="#1F1F1F"/>
+          </svg>
+          <svg width="12" class="mercedes-amg-container__next-arrow next-arrow" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.292893 20.2929C-0.0976311 20.6834 -0.0976311 21.3166 0.292893 21.7071C0.683417 22.0976 1.31658 22.0976 1.70711 21.7071L0.292893 20.2929ZM11 11L11.7071 11.7071C12.0976 11.3166 12.0976 10.6834 11.7071 10.2929L11 11ZM1.70711 0.292892C1.31658 -0.0976315 0.683418 -0.0976315 0.292893 0.292892C-0.0976309 0.683416 -0.0976309 1.31658 0.292893 1.70711L1.70711 0.292892ZM1.70711 21.7071L11.7071 11.7071L10.2929 10.2929L0.292893 20.2929L1.70711 21.7071ZM11.7071 10.2929L1.70711 0.292892L0.292893 1.70711L10.2929 11.7071L11.7071 10.2929Z" fill="#1F1F1F"/>
+          </svg>  
+        </div>
+      </div>  
+      <div class="mercedes-amg-container__slider">
+        <div class="mercedes-amg-container__slider-element">
+          <div class="mercedes-amg-container__content">
+            <p>Mercedes</p>
+            <p>C-Класс</p>
+            <a href="#">Выбрать</a>
+          </div>
+        </div>
+        <div class="mercedes-amg-container__slider-element">
+          <div class="mercedes-amg-container__content">
+            <p>Mercedes</p>
+            <p>C-Класс</p>
+            <a href="#">Выбрать</a>
+          </div>
+        </div>
+        <div class="mercedes-amg-container__slider-element">
+          <div class="mercedes-amg-container__content">
+            <p>Mercedes</p>
+            <p>C-Класс</p>
+            <a href="#">Выбрать</a>
+          </div>
+        </div>
+        <div class="mercedes-amg-container__slider-element">
+          <div class="mercedes-amg-container__content">
+            <p>Mercedes</p>
+            <p>C-Класс</p>
+            <a href="#">Выбрать</a>
+          </div>
+        </div>
+        <div class="mercedes-amg-container__slider-element">
+          <div class="mercedes-amg-container__content">
+            <p>Mercedes</p>
+            <p>C-Класс</p>
+            <a href="#">Выбрать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sales-container">
+      <div class="sales-container__header">
+        <h2>Распродажа</h2>
+        <div class="sales-container__line line"></div>
+        <div class="sales-container__crosses crosses">
+          <svg width="12" class="sales-container__prev-arrow prev-arrow" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.7071 1.70711C12.0976 1.31658 12.0976 0.683417 11.7071 0.292893C11.3166 -0.0976311 10.6834 -0.0976311 10.2929 0.292893L11.7071 1.70711ZM1 11L0.292893 10.2929C-0.0976313 10.6834 -0.0976313 11.3166 0.292893 11.7071L1 11ZM10.2929 21.7071C10.6834 22.0976 11.3166 22.0976 11.7071 21.7071C12.0976 21.3166 12.0976 20.6834 11.7071 20.2929L10.2929 21.7071ZM10.2929 0.292893L0.292893 10.2929L1.70711 11.7071L11.7071 1.70711L10.2929 0.292893ZM0.292893 11.7071L10.2929 21.7071L11.7071 20.2929L1.70711 10.2929L0.292893 11.7071Z" fill="#1F1F1F"/>
+          </svg>
+          <svg width="12" class="sales-container__next-arrow next-arrow" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.292893 20.2929C-0.0976311 20.6834 -0.0976311 21.3166 0.292893 21.7071C0.683417 22.0976 1.31658 22.0976 1.70711 21.7071L0.292893 20.2929ZM11 11L11.7071 11.7071C12.0976 11.3166 12.0976 10.6834 11.7071 10.2929L11 11ZM1.70711 0.292892C1.31658 -0.0976315 0.683418 -0.0976315 0.292893 0.292892C-0.0976309 0.683416 -0.0976309 1.31658 0.292893 1.70711L1.70711 0.292892ZM1.70711 21.7071L11.7071 11.7071L10.2929 10.2929L0.292893 20.2929L1.70711 21.7071ZM11.7071 10.2929L1.70711 0.292892L0.292893 1.70711L10.2929 11.7071L11.7071 10.2929Z" fill="#1F1F1F"/>
+          </svg>  
+        </div>
+      </div>
+      <div class="sales-container__slider">
+        <div class="sales-container__slider-element sale-car-first">
+          <div class="sales-container__content">
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-right">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-left">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <h2>SALE</h2>
+            <p>До окончания акции осталось:</p>
+            <div class="sales-container__timer">
+              <span class="sales-container__time">1</span>
+              <span class="sales-container__time">2</span>
+              :
+              <span class="sales-container__time">3</span>
+              <span class="sales-container__time">4</span>
+              :
+              <span class="sales-container__time">5</span>
+              <span class="sales-container__time">6</span>
+            </div>
+            <div class="sales-container__all-products">
+              <p>Смотреть все товары</p>
+            </div>
+          </div>
+        </div>
+        <div class="sales-container__slider-element sale-car-second">
+          <div class="sales-container__content">
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-right">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-left">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <h2>SALE</h2>
+            <p>До окончания акции осталось:</p>
+            <div class="sales-container__timer">
+              <span class="sales-container__time">1</span>
+              <span class="sales-container__time">2</span>
+              :
+              <span class="sales-container__time">3</span>
+              <span class="sales-container__time">4</span>
+              :
+              <span class="sales-container__time">5</span>
+              <span class="sales-container__time">6</span>
+            </div>
+            <div class="sales-container__all-products">
+              <p>Смотреть все товары</p>
+            </div>
+          </div>
+        </div>
+        <div class="sales-container__slider-element sale-car-third">
+          <div class="sales-container__content">
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-right">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-left">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <h2>SALE</h2>
+            <p>До окончания акции осталось:</p>
+            <div class="sales-container__timer">
+              <span class="sales-container__time">1</span>
+              <span class="sales-container__time">2</span>
+              :
+              <span class="sales-container__time">3</span>
+              <span class="sales-container__time">4</span>
+              :
+              <span class="sales-container__time">5</span>
+              <span class="sales-container__time">6</span>
+            </div>
+            <div class="sales-container__all-products">
+              <p>Смотреть все товары</p>
+            </div>
+          </div>
+        </div>
+        <div class="sales-container__slider-element sale-car-fourth">
+          <div class="sales-container__content">
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-right">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-left">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <h2>SALE</h2>
+            <p>До окончания акции осталось:</p>
+            <div class="sales-container__timer">
+              <span class="sales-container__time">1</span>
+              <span class="sales-container__time">2</span>
+              :
+              <span class="sales-container__time">3</span>
+              <span class="sales-container__time">4</span>
+              :
+              <span class="sales-container__time">5</span>
+              <span class="sales-container__time">6</span>
+            </div>
+            <div class="sales-container__all-products">
+              <p>Смотреть все товары</p>
+            </div>
+          </div>
+        </div>
+        <div class="sales-container__slider-element sale-car-second">
+          <div class="sales-container__content">
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-right">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-left">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <h2>SALE</h2>
+            <p>До окончания акции осталось:</p>
+            <div class="sales-container__timer">
+              <span class="sales-container__time">1</span>
+              <span class="sales-container__time">2</span>
+              :
+              <span class="sales-container__time">3</span>
+              <span class="sales-container__time">4</span>
+              :
+              <span class="sales-container__time">5</span>
+              <span class="sales-container__time">6</span>
+            </div>
+            <div class="sales-container__all-products">
+              <p>Смотреть все товары</p>
+            </div>
+          </div>
+        </div>
+        <div class="sales-container__slider-element sale-car-third">
+          <div class="sales-container__content">
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-right">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <div class="sales-container__partition-line sales-container__partition-line--rotate-left">
+              <p>скидки до -50% скидки до -50%</p>
+            </div>
+            <h2>SALE</h2>
+            <p>До окончания акции осталось:</p>
+            <div class="sales-container__timer">
+              <span class="sales-container__time">1</span>
+              <span class="sales-container__time">2</span>
+              :
+              <span class="sales-container__time">3</span>
+              <span class="sales-container__time">4</span>
+              :
+              <span class="sales-container__time">5</span>
+              <span class="sales-container__time">6</span>
+            </div>
+            <div class="sales-container__all-products">
+              <p>Смотреть все товары</p>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <div class="gifts-container">
+      <h2>Эксклюзивные купоны новичкам!</h2>
+      <div class="gifts-container__content">
+        <div class="gifts-container__left-side">
+          <div class="points">
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+          </div>
+          <div class="gifts-container__amount">10 BYN</div>
+        </div>
+        <div class="gifts-container__right-side">
+          <div class="gifts-container__btn">Получить!</div>
+        </div>
+        <div class="points">
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+      </div>
+      <div class="modal-window">
+        <div class="modal-window__message">
+          <svg viewBox="0 0 10 10" class="modal-window__close-btn">
+            <path d="M2,8 L8,2" class="p1"/>
+            <path d="M2,2 L8,8" class="p3"/>
+          </svg>
+          <div class="modal-window__h2">Условия</div>
+          <div class="modal-window__terms">
+            <p>Купон распространяется только на клиентов осуществивших покупку в течении 2000 года.</p>
+            <input class="modal-window__input" placeholder="E-mail" type="email">
+            <div class="modal-window__confirmation-container">
+              <div class="gifts-container__btn-get">Забрать купон</div>
+              <div class="gifts-container__btn-cancel">Отменить</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="articles">
+      <div class="articles__about-us">
+        <div class="articles__header">
+          <h2>О нас</h2>
+          <div class="line"></div>
+        </div>
+        <div class="articles__articles-about-us">
+          <div class="articles__about-us-article">
+            <div class="scale">
+              <img class="articles__img" src="assets/img/image51.png">
+            </div>
+            <div class="articles__articles-about-us__content">
+              <h2>Для ценителей. Под Минском прошел слет легендарных Mercedes-Benz</h2>
+              <p>
+                Под Минском прошел слет легенды лихих 90-х — Mercedes-Benz W140. 
+                Даже в 2020 году эта марка авто не нуждается в особом представлении, 
+                хотя в последний раз она сошла с конвейера еще в июле 1998 года.
+                Вчера автомобильное сообщество W140 Belarus устроило республиканский слет.
+              </p>
+              <button class="articles__btn">Подробнее</button>
+            </div>
+          </div>
+          <div class="articles__about-us-article">
+            <div class="scale">
+              <img class="articles__img" src="assets/img/Rectangle258.png">
+            </div>
+            <div class="articles__articles-about-us__content">
+              <h2>Mercedes снова готовит G-Class с огромным дорожным просветом</h2>
+              <p>
+                Представленный пять лет назад Mercedes G500/G550 4×4² (еще в старом кузове) 
+                не останется единственным «Геликом» с огромными колесами и внушительным клиренсом.
+                Шпионские фотографии Carscoops подтверждают, что скоро на рынок выйдет преемник.
+              </p>
+              <button class="articles__btn"> Узнать подробности</button>
+            </div>
+          </div>
+          <div class="articles__about-us-article">
+            <div class="scale">
+              <img class="articles__img" src="assets/img/image50.png">
+            </div>
+            <div class="articles__articles-about-us__content">
+              <h2>Камеры вместо зеркал теперь будут ставить и на строительные грузовики Mercedes-Benz</h2>
+              <p>
+                Коронавирус нарушил планы всех производителей, но жизнь не останавливается. 
+                Несмотря на отмену крупнейшего салона коммерческих автомобилей IAA 2020, 
+                ведущие производители презентуют свои новинки в режиме онлайн. 
+              </p>
+              <button class="articles__btn">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="articles__history">
+        <div class="articles__header">
+          <h2>История</h2>
+          <div class="line"></div>
+        </div>
+        <div class="articles__history__content">
+          <div class="history__scale">
+            <img class="articles__img" src="assets/img/Rectangle91.png">
+          </div>
+          <h2>Путешествие по истории E-Class с 1931 по 1995 год.</h2>
+          <p class="articles__history__date">10.07.2019</p>
+        </div>
+        <div class="articles__history__content">
+          <div class="history__scale">
+            <img class="articles__img" src="assets/img/Rectangle93.png">
+          </div>
+          <h2>Формула 1 и чемпионат мира - захватывающее возвращение.</h2>
+          <p class="articles__history__date">10.07.2019</p>
+        </div>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="tags__tag">Kompaktwagen</div>
+      <div class="tags__tag">Limousinen</div>
+      <div class="tags__tag">Limousinen</div>
+      <div class="tags__tag">SUVs</div>
+      <div class="tags__tag">Coupés</div>
+      <div class="tags__tag">Kompaktwagen</div>
+      <div class="tags__tag">T-Modelle</div>
+      <div class="tags__tag">Kompaktwagen</div>
+      <div class="tags__tag">Coupés</div>
+      <div class="tags__tag">T-Modelle</div>
+      <div class="tags__tag">SUVs</div>
+      <div class="tags__tag">SUVs</div>
+      <div class="tags__tag">SUVs</div>
+      <div class="tags__tag">Limousinen</div>
+      <div class="tags__tag">Kompaktwagen</div>
+      <div class="tags__tag">Kompaktwagen</div>
+      <div class="tags__tag">T-Modelle</div>
+      <div class="tags__tag">Coupés</div>
+    </div>
+    <div class="mercedes-history">
+      <div class="mercedes-history__article">
+        <h2>
+          История бренда: 130 лет Mercedes-Benz
+          Легендарный бренд, давший начало всему автопрому, сегодня отмечает юбилей
+        </h2>
+        <p>
+          Марка Mercedes-Benz для автолюбителей со всего мира является
+          не только одним из самых узнаваемых и значимых производителей
+          автомобилей в мире, но на прямую ассоциируется с самим понятием 
+          "автомобиль". И это оправданно как минимум историческим значением 
+          бренда: ровно 130 лет назад немецкий инженер Карл Бенц официально 
+          оформил патент на «транспортное средство с бензиновым двигателем».
+        </p>
+        <p>
+          Событие, которое положило начало истории не только немецкой марки, 
+          но и всего мирового автопрома, произошло 29 января 1886 года. Именно 
+          в этот день немецкий инженер и новатор по фамилии Бенц получил патент 
+          № 37435 на свое творение - первое в мире авто с бензиновым мотором.
+        </p>
+        <p>
+          Конечно, изобретение Бенца сильно отличалось от современного образа 
+          автомобиля: по сути, он установил разработанный им с нуля 
+          четырёхтактный двигатель на трёхколёсный велосипед.
+        </p>
+      </div>
+      <div class="mercedes-history__article">
+        <h2>Логотип компании Mercedes</h2>
+        <p>
+          Cотрудничество компаний Бенца и Даймлера оказалась одной из самых длинных 
+          в истории автомобильной промышленности, так как обе компании в этой 
+          комбинации дожили до 1998 года. Их первым совместным автомобилем стала модель K.
+        </p>
+        <p>
+          Тогда же возникает Mercedes CCK и SSKL, дизайнером которых был Ганс Нибель. 
+          В дополнение к типичным спортивным версиям, производитель предлагает также 
+          кабриолеты и серийные модели с кузовом, адаптированным к ралли.
+        </p>
+        <p>
+          Первая модель и массовое производство дизельного Mercedes 260D было
+          запущено с 1936 по 1940 год. Дизельный двигатель 2,5 л имел мощность 45 л. с. 
+          Некоторые из автомобилей этой марки впоследствии использовались немецкой армией.
+        </p>
+        <p>
+          Вторая Мировая война чуть ли не разрушила бизнес «Daimler-Benz AG». 
+          Все производственные мощности компании были практически уничтожены. 
+          Заводы в Штутгарте, Зинделфингене и Мангейме в буквальном превратились 
+          в груду обломков. В 1945 году после окончательного собрания совета 
+          директоров даже вышел доклад, итогом которого стала мысль, 
+          что концерн «Daimler-Benz» больше не существует.
+        </p>
+      </div>
+      <div class="mercedes-history__article">
+        <h2>Реклама системы BlueEFFICIENCY</h2>
+        <p>В аэропорту Йоханнесбурга был размещен билборд, который изначально 
+          представлял собой просто белую поверхность и логотип Mercedes-Benz. 
+          Спустя некоторое время на билборде накопились загрязняющие воздух вещества, 
+          и на белой основе четко стало видно сообщение: «Если бы большее количество 
+          автомобилей имели BlueEFFICIENCY, вы бы не смогли это прочитать».  
+        </p>
+        <p>
+          Реклама Mercedes-Benz также всегда выделилась своим фирменным исполнением 
+          и креативностью – бренд никогда не жалел денег на маркетинг.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer__content">
+      <svg class="monitor" width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M27.1779 0.388184H2.82226C1.26608 0.388184 0 1.65416 0 3.21044V19.6977C0 21.2539 1.26608 22.52 2.82226 22.52H12.0943L11.5955 26.0511H9.25628C8.82511 26.0511 8.47558 26.4007 8.47558 26.8318C8.47558 27.263 8.82511 27.6125 9.25628 27.6125H12.2737H17.7265H20.7439C21.1751 27.6125 21.5246 27.263 21.5246 26.8318C21.5246 26.4007 21.1751 26.0511 20.7439 26.0511H18.4046L17.9058 22.52H27.1779C28.734 22.52 30.0001 21.2539 30.0001 19.6977V3.21044C30 1.65416 28.734 0.388184 27.1779 0.388184ZM2.82226 1.9496H27.1779C27.873 1.9496 28.4387 2.51516 28.4387 3.21044V17.6408H1.56141V3.21044C1.56141 2.51516 2.12698 1.9496 2.82226 1.9496ZM16.8277 26.051H13.1724L13.6712 22.5199H16.329L16.8277 26.051ZM27.1779 20.9585H2.82226C2.12709 20.9585 1.56141 20.3929 1.56141 19.6976V19.2021H28.4386V19.6976C28.4386 20.3929 27.873 20.9585 27.1779 20.9585Z"/>
+      </svg>
+      <p>Перейти на мобильную версию сайта</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="script.js"></script>
+</body>
+</html>
