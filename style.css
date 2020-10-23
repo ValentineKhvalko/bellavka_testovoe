@@ -413,7 +413,8 @@
   display: flex;
 }
 
-.gifts-container__btn-get {
+.gifts-container__btn-get,
+.modal-window-for-comment__send-btn {
   color: #000;
   background: #FFFFFF;
   border-radius: 2px;
@@ -422,34 +423,36 @@
   margin-right: 20px;
 }
 
-.gifts-container__btn-get:hover, 
-.gifts-container__btn-cancel:hover {
+.btn:hover {
   color: #717172; 
 }
 
-.gifts-container__btn-get:active, 
-.gifts-container__btn-cancel:active {
+.btn:active {
   color: #00A3FF;
 }
 
-.gifts-container__btn-cancel {
+.gifts-container__btn-cancel,
+.modal-window-for-comment__cancel-btn {
   color: #AFAFB1;
   padding: 10px 20px;
   cursor: pointer;
 }
 
-.modal-window__close-btn {
+.modal-window__close-btn, 
+.modal-window-for-comment__close-btn {
   position: absolute;
   right: 0;
   top: 0;
   cursor: pointer;
 }
 
-.modal-window__close-btn {
+.modal-window__close-btn,
+.modal-window-for-comment__close-btn {
   width: 20px;
 }
 
-.modal-window__close-btn path {
+.modal-window__close-btn path,
+.modal-window-for-comment__close-btn {
   color:#CDCDCD;
   stroke: currentcolor;
 }
@@ -598,6 +601,208 @@
   fill: #fff;
 }
 
+.comments-and-questions-continer {
+  font-family: 'Roboto-regular';
+}
+
+.comments-and-questions-continer__header {
+  display: flex;
+  padding: 30px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.comments__header {
+  margin-right: 50px;
+}
+
+.comments-and-questions-continer__content {
+  background: #000;
+  font-size: 12px;
+  color: #fff;
+  position: relative;
+}
+
+.comments-and-questions-continer__content__crosses {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.comment {
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;  
+}
+
+.comment__avatar {
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.comment__rating-container {
+  display: flex;
+  padding: 15px 0;
+}
+
+.comment__start {
+  padding-right: 5px;
+}
+
+.comment__content p {
+  line-height: 16px;
+}
+
+.comments:first-child {
+  border-bottom: .5px solid #4E4E4E;
+}
+
+.give-feedback-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.give-feedback-btn {
+  margin: 30px 0;
+  padding: 8px 70px;
+  color: #fff;
+  background: #00A3FF;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.give-feedback-btn:hover {
+  color: rgb(221, 220, 220);
+  background: #399af5;
+}
+
+.give-feedback-btn:active {
+  color: #00e1ff;
+}
+
+.modal-window-for-comment {
+  display: none;
+}
+
+.modal-window-for-comment__container {
+  margin: 5% auto;
+  width: 800px;
+  padding: 0px 50px;
+  background: #000;
+  color: #fff;
+  box-sizing: border-box;
+  font-family: 'Roboto-regular';
+  position: relative;
+}
+
+.modal-window-for-comment__close-btn {
+  padding: 15px;
+}
+
+.modal-window__header {
+  margin-bottom: 40px;
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+}
+
+.give-feedback-page,
+.ask-question-page {
+  padding: 20px 30px;
+  border-bottom: 1px solid #CDCDCD;
+  cursor: pointer;
+}
+
+.modal-window__header p:hover {
+  color: #CDCDCD
+}
+
+.modal-window-for-comment__stars-container {
+  padding: 10px 0 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-weight: 400;
+}
+
+.modal-window-for-comment__stars-container:not(:checked) > input {
+  display: none;
+}
+
+.modal-window-for-comment__star {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modal-window-for-comment__stars-container:not(:checked) > label>svg {
+  fill: #C4C4C4;
+}
+
+.modal-window-for-comment__stars-container > input:checked ~ label>svg {
+  fill: #00A3FF;
+}
+
+.modal-window-for-comment__stars-container:not(:checked) > label:hover>svg,
+.modal-window-for-comment__stars-container:not(:checked) > label:hover ~ label>svg {
+	fill: #00A3FF;
+}
+
+.modal-window-for-comment__stars-container > input:checked + label:hover>svg,
+.modal-window-for-comment__stars-container > input:checked + label:hover>svg ~ label>svg,
+.modal-window-for-comment__stars-container > input:checked ~ label:hover>svg,
+.modal-window-for-comment__stars-container > input:checked ~ label:hover>svg ~ label>svg,
+.modal-window-for-comment__stars-container > label:hover>svg ~ input:checked ~ label>svg {
+	fill: #00A3FF;
+}
+
+.modal-window-for-comment__stars-container > label:active>svg{
+	position: relative;
+}
+
+.modal-window-for-comment__text textarea {
+  margin: 20px 0 50px;
+  padding: 20px;
+  width: 100%;
+  height: 250px;
+  resize: none;
+  background: #222222;
+  color: #fff;
+  box-sizing: border-box;
+  border: none;
+}
+
+.modal-window-for-comment__footer {
+  border-top: 1px solid #4E4E4E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-window-for-comment__ruls {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal-window-for-comment__ruls:hover {
+  color: #C4C4C4;
+}
+
+.modal-window-for-comment__btns {
+  display: flex;
+  margin: 30px 0;
+}
+
+.modal-window-for-comment__send-btn,
+.modal-window-for-comment__cancel-btn {
+  padding: 10px 50px;
+}
+
+.modal-window-for-comment__send-btn {
+  background: #00A3FF;
+  color: #fff;
+  margin-right: 0;
+}
+
 .footer__content:hover .monitor path {
   fill: rgb(194, 194, 194);
 }
@@ -608,6 +813,15 @@
 
 .display-block {
   display: block;
+}
+
+.active-comment {
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.font-weight-bold {
+  font-weight: 700;
 }
 
 @keyframes anim {
