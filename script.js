@@ -107,7 +107,7 @@ const addComment = (isFeedback) => {
     const data = isFeedback ? commentsData : questionData;
 
     if(data[data.length - 1].length === 2){
-      commentsData.push([]);
+      data.push([]);
       addComment();
     } else {
       container.innerHTML = '';
@@ -148,6 +148,10 @@ modalCommentsheader.addEventListener('click', (event)=> {
     modalQuestionPage.classList.toggle('active-comment');
     commentContetntBlock.classList.toggle('display-none');
     questionContentBlock.classList.toggle('display-none');
+    feedbackHeader.classList.toggle('font-weight-bold');
+    questionsHeader.classList.toggle('font-weight-bold');
+    commentsContainer.classList.toggle('display-none');
+    questionContainer.classList.toggle('display-none');
    }
 })
 

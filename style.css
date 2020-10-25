@@ -4,7 +4,7 @@
 }
 
 .header {
-  padding: 40px 200px;
+  padding: 40px 200px 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,9 +17,9 @@
 
 .nav__li {
   list-style: none;
-  font-weight: 600;
+  font-weight: 500;
   color: #070707;
-  padding-right: 20px;
+  padding: 22px 25px 20px 0;
   cursor: pointer;
 }
 
@@ -28,21 +28,29 @@
   position: relative;
 }
 
+.header__logo {
+  margin-left: -10px;
+  width: 200px;
+}
+
 .dropdown-menu {
-  min-width: 270px;
+  min-width: 280px;
   position: absolute;
-  top: 20px;
-  padding: 20px;
+  box-sizing: border-box;
+  top: 50px;
+  left: 5px;
+  padding: 25px;
   color: #fff;
   background-color: #000;
   font-size: 18px;
   font-weight: 400;
-  display: none;
+  display: block;
+  border-radius: 2px;
 }
 
 .dropdown-menu__li {
   list-style: none;
-  padding: 5px 0;
+  line-height: 40px;
 }
 
 .nav__li-models:hover .dropdown-menu{
@@ -60,15 +68,18 @@
 }
 
 .language-select {
-  width: 120px;
+  width: 125px;
   margin-right: 20px;
   padding-right: 10px;
   border: 1px solid #1F1F1F;
   border-radius: 2px;
+  box-sizing: border-box;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Roboto-medium';
+  font-size: 14px;
 }
 
 .language-select__dropdown-menu {
@@ -79,6 +90,7 @@
   display: none;
   position: absolute;
   top: 50px;
+  border-radius: 2px;
 }
 
 .language-select__dropdown-menu__li {
@@ -87,11 +99,12 @@
 }
 
 .language-select__dropdown-menu__img {
+  width: 15px;
   padding: 10px;
 }
 
 .search {
-  padding: 5px;
+  padding: 0 5px;
   border: 1px solid #1F1F1F;
   border-radius: 2px;
   display: flex;
@@ -99,13 +112,14 @@
 }
 
 .search__input {
-  padding: 5px;
+  width: 150px;
+  padding: 5px 0;
   border: none;
   outline: none;
 }
 
 .banner {
-  height: 460px;
+  height: 470px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url(./assets/img/image54.png) 50%;
   background-size: cover;
   color: #fff;
@@ -127,16 +141,18 @@
 .banner__percent {
   font-size: 144px;
   margin-right: 200px;
-  line-height: 0.8;
+  line-height: 0.9;
 }
 
 .main {
-  padding: 40px 200px;
+  padding: 65px 200px;
 }
 
 .mercedes-amg-container__header, 
 .sales-container__header,
-.articles__header {
+.articles__header,
+.articles-history__header,
+.gifts-container__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -144,7 +160,7 @@
 }
 
 .line {
-  margin-left: 30px;
+  margin-left: 90px;
   background: #1F1F1F;
   height: 1px;
   flex: 1 1 auto;
@@ -152,14 +168,14 @@
 
 .mercedes-amg-container__slider,
 .sales-container__slider {
-  margin: 40px 0;
+  margin: 45px -5px;
 }
 
 .mercedes-amg-container__slider-element {
   background: linear-gradient(90deg, rgba(31, 31, 31, 0.65) 35.73%, rgba(31, 31, 31, 0) 66.83%), url(assets/img/image56.png) 50%, no-repeat;
   background-size: cover;
   width: 475px;
-  height: 255px;  
+  height: 260px;  
   border-radius: 2px;
   color: #fff;
   font-family: "Roboto-medium";
@@ -174,23 +190,33 @@
   padding-left: 30px;
 }
 
-.mercedes-amg-container__content a {
+.choose__link {
   font-family: "Roboto-regular";
+  text-decoration: underline;
   font-size: 20px;
   color: #00A3FF;
   padding: 10px 0;
+  cursor: pointer;
 }
+
+.choose__link:hover {
+  color: #00c3ff;
+} 
 
 .slick-slide {
   margin: 0 10px;
 }
 
 .prev-arrow {
-  margin: 0 50px;
+  margin: 0 80px;
 }
 
 .prev-arrow, .next-arrow {
   cursor: pointer;
+}
+
+.sales-container {
+  padding: 30px 0 25px;
 }
 
 .sale-car-first {
@@ -210,7 +236,8 @@
 }
 
 .sales-container__slider-element {
-  height: 525px;
+  margin: 0 -5px;
+  height: 535px;
   background-size: cover;
   border-radius: 2px;
   font-family: "Roboto-regular";
@@ -228,8 +255,9 @@
 
 .sales-container__partition-line {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  top: 300px;
+  width: 99%;
+  padding: 3px;
+  top: 310px;
   position: absolute;
   text-align: center;
   text-transform: uppercase;
@@ -248,8 +276,8 @@
 }
 
 .sales-container__content h2 {
-  margin: 10px 0;
   font-family: "Roboto-bold";
+  font-size: 30px;
 }
 
 .sales-container__timer {
@@ -259,13 +287,13 @@
 .sales-container__time {
   background: #fff;
   color: #000;
-  padding: 3px;
+  padding: 7px;
   font-size: 18px;
 }
 
 .sales-container__all-products {
   width: 235px;
-  margin: 20px 0;
+  margin: 35px 0 20px;
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
@@ -273,9 +301,22 @@
   border-radius: 2px;
 }
 
+.gifts-container__header {
+  font-family: 'Roboto-bold';
+  font-size: 24px;
+  padding-bottom: 45px;
+}
+
+.gifts-container__header .line,
+.articles__header .line,
+.articles-history__header .line {
+  margin-left: 30px;
+}
+
 .gifts-container {
   background: #000;
   color: #fff;
+  border-radius: 2px;
   font-family: "Roboto-bold";
   display: flex;
   flex-direction: column;
@@ -283,6 +324,7 @@
 }
 
 .gifts-container h2 {
+  font-size: 30px;
   margin: 40px 0;
 }
 
@@ -291,6 +333,10 @@
   display: flex;
   color: #000;
   position: relative;
+}
+
+.gifts-container__amount {
+  padding: 15px 60px;
 }
 
 .gifts-container__right-side, 
@@ -438,9 +484,13 @@
 }
 
 .articles {
-  margin: 30px 0;
+  padding: 50px 0;
   display: flex;
   justify-content: space-between;
+}
+
+.articles__header {
+  padding: 20px 0;
 }
 
 .articles__about-us {
@@ -450,13 +500,14 @@
 
 .articles__about-us-article {
   display: flex;
-  padding: 20px 0;
+  padding: 20px 0 15px;
 }
 
 .scale {
-  min-width: 220px;
+  min-width: 235px;
   margin-right: 20px;
   overflow: hidden;
+  border-radius: 2px;
 }
 
 .articles__img {
@@ -470,34 +521,40 @@
 }
 
 .articles__articles-about-us__content h2 {
+  padding-top: 5px;
   font-size: 24px;
   font-family: 'Roboto-bold';
 }
 
 .articles__articles-about-us__content p {
-  margin: 10px 0;
+  padding-bottom: 13px;
 }
 
 .articles__btn {
   margin: 10px 0;
-  padding: 10px 50px;
+  padding: 8px 65px;
   color: #fff;
   background: #1F1F1F;
   border-radius: 2px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .articles__btn:hover {
   color: rgb(172, 172, 172);
 }
 
+.articles-history__header {
+  padding: 20px 0 30px;
+}
+
 .articles__history__content {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .articles__history__content h2 {
   font-family: 'Roboto-bold';
-  margin: 10px 0;
+  padding: 15px 0 10px;
   cursor: pointer;
 }
 
@@ -512,12 +569,11 @@
 }
 
 .history__scale {
-  min-width: 470px;
+  min-width: 490px;
   overflow: hidden;
 }
 
 .tags {
-  margin: 50px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
@@ -526,7 +582,7 @@
 }
 
 .tags__tag {
-  padding: 10px;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -542,6 +598,7 @@
 }
 
 .mercedes-history {
+  padding: 60px 0 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
@@ -559,26 +616,9 @@
   padding: 12px 0;
 }
 
-.footer {
-  background: #000;
-  color: #fff;
-  font-family: 'Roboto-regular';
-}
-
-.footer__content {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.monitor {
-  margin-right: 10px;
-}
-
-.monitor path {
-  fill: #fff;
+.questions,
+.comments {
+  width: 100%;
 }
 
 .comments-and-questions-continer {
@@ -587,7 +627,7 @@
 
 .comments-and-questions-continer__header {
   display: flex;
-  padding: 30px 0;
+  padding: 30px 0 20px;
   font-size: 20px;
   font-weight: 400;
 }
@@ -607,7 +647,6 @@
 .comments-and-questions-continer__content {
   display: flex;
   background: #000;
-  font-size: 12px;
   color: #fff;
   position: relative;
   min-height: 400px;
@@ -621,9 +660,10 @@
 }
 
 .comment {
-  padding: 30px;
+  padding: 45px 150px 30px 35px;
   display: flex;
-  align-items: flex-start;  
+  align-items: flex-start; 
+  border-bottom: .5px solid #4E4E4E; 
 }
 
 .comment__avatar {
@@ -634,7 +674,11 @@
 
 .comment__rating-container {
   display: flex;
-  padding: 15px 0 5px;
+  padding: 10px 0 5px;
+}
+
+.comment h2 {
+  font-size: 18px;
 }
 
 .comment__start {
@@ -643,11 +687,8 @@
 
 .comment__content p {
   padding-top: 10px;
-  line-height: 16px;
-}
-
-.comment {
-  border-bottom: .5px solid #4E4E4E;
+  line-height: 20px;
+  font-size: 16px;
 }
 
 .give-feedback-btn-container {
@@ -657,7 +698,7 @@
 
 .give-feedback-btn {
   margin: 30px 0;
-  padding: 8px 70px;
+  padding: 8px 120px;
   color: #fff;
   background: #00A3FF;
   border-radius: 2px;
@@ -799,6 +840,28 @@
   background: #00A3FF;
   color: #fff;
   margin-right: 0;
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  font-family: 'Roboto-regular';
+}
+
+.footer__content {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.monitor {
+  margin-right: 10px;
+}
+
+.monitor path {
+  fill: #fff;
 }
 
 .footer__content:hover .monitor path {
