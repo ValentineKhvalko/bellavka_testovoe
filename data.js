@@ -19,5 +19,7 @@ const commentsData = [
   ]
 ]
 
+const questionData = [[]];
+
 
 

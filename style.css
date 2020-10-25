@@ -1,23 +1,3 @@
-@font-face {
-  font-family: Blacker-Sans-Display-Italic;
-  src: url('assets/fonts/BlackerSansDisplayTrial-Italic.ttf');
-}
-
-@font-face {
-  font-family: Roboto-medium;
-  src: url('assets/fonts/Roboto-Medium.ttf');
-}
-
-@font-face {
-  font-family: Roboto-bold;
-  src: url('assets/fonts/Roboto-Bold.ttf');
-}
-
-@font-face {
-  font-family: Roboto-regular;
-  src: url('assets/fonts/Roboto-Regular.ttf');
-}
-
 *{
   margin: 0;
   padding: 0;
@@ -612,21 +592,32 @@
   font-weight: 400;
 }
 
+.comments-and-questions-continer__header p {
+  cursor: pointer; 
+}
+
+.comments-and-questions-continer__header p:hover {
+  color: rgb(94, 94, 94)
+}
+
 .comments__header {
   margin-right: 50px;
 }
 
 .comments-and-questions-continer__content {
+  display: flex;
   background: #000;
   font-size: 12px;
   color: #fff;
   position: relative;
+  min-height: 400px;
 }
 
 .comments-and-questions-continer__content__crosses {
   position: absolute;
   right: 30px;
   top: 30px;
+  z-index: 10;
 }
 
 .comment {
@@ -636,13 +627,14 @@
 }
 
 .comment__avatar {
+  width: 50px;
   margin-right: 20px;
   border-radius: 50%;
 }
 
 .comment__rating-container {
   display: flex;
-  padding: 15px 0;
+  padding: 15px 0 5px;
 }
 
 .comment__start {
@@ -650,10 +642,11 @@
 }
 
 .comment__content p {
+  padding-top: 10px;
   line-height: 16px;
 }
 
-.comments:first-child {
+.comment {
   border-bottom: .5px solid #4E4E4E;
 }
 
@@ -718,7 +711,7 @@
 }
 
 .modal-window-for-comment__stars-container {
-  padding: 10px 0 20px;
+  padding: 10px 0 10px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -759,7 +752,12 @@
 	position: relative;
 }
 
-.modal-window-for-comment__text textarea {
+.modal-window-for-comment__text p {
+  padding-top: 10px;
+}
+
+.modal-window-for-comment__text textarea,
+.modal-window-for-question__textarea {
   margin: 20px 0 50px;
   padding: 20px;
   width: 100%;
@@ -813,6 +811,10 @@
 
 .display-block {
   display: block;
+}
+
+.display-none {
+  display: none;
 }
 
 .active-comment {
