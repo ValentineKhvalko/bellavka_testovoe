@@ -1,0 +1,160 @@
+let ratingValue = '';
+let currentLanguage;
+let prevLanguage;
+
+numberOfComments.innerHTML = [].concat(...commentsData).length;
+numberOfQuestions.innerHTML = [].concat(...questionData).length;
+
+commentsData.forEach((page) => {
+  const commentPage = document.createElement('div');
+  commentsContainer.append(commentPage);
+  page.forEach((comment)=> {
+    commentPage.append(createComment(comment, true));
+  });
+})
+
+const setLanguage = () => { 
+  localStorage.getItem('language') 
+    ? saveLanguage(localStorage.getItem('language')) 
+    : saveLanguage(defaultLanguage.id);
+}
+
+const saveLanguage = (language) => {
+  currentLanguage = [...languages].find((el) => el.id === language);
+  currentFlag.innerHTML = '';
+  currentFlag.append(currentLanguage);
+  if(prevLanguage) languageDropdownMenu.append(prevLanguage);
+  localStorage.setItem('language', language);
+}   
+
+const openDropdownMenu = (event) => {
+  if(!languageDropdownMenu.classList.contains('display-block')) {
+    languageDropdownMenu.classList.add('display-block');
+  } else {
+    languageDropdownMenu.classList.remove('display-block');
+  }
+  event.stopPropagation();
+}
+
+const changeLanguage = (event) => {
+  const language = event.target.closest('.language-select__dropdown-menu__li');
+  if(language) {
+    prevLanguage = currentLanguage;
+    saveLanguage(language.id);
+  }
+}
+
+isContainsDisplayBlock = (elem) => {
+  return elem.classList.contains('display-block');
+}; 
+
+const toggleStilesToCommentPageElements = () => {
+  modalFeedbackPage.classList.toggle('active-comment');
+  modalQuestionPage.classList.toggle('active-comment');
+  commentContetntBlock.classList.toggle('display-none');
+  questionContentBlock.classList.toggle('display-none');
+  feedbackHeader.classList.toggle('font-weight-bold');
+  questionsHeader.classList.toggle('font-weight-bold');
+  commentsContainer.classList.toggle('display-none');
+  questionContainer.classList.toggle('display-none');
+}
+
+const addComment = (isFeedback) => {
+  const commentTextarea = isFeedback ? feedbackTextarea : questionTextarea;
+  const container = isFeedback ? commentsContainer : questionContainer;
+  const quantity = isFeedback ? numberOfComments : numberOfQuestions;
+  if(commentTextarea.value) {
+    const data = isFeedback ? commentsData : questionData;
+
+    if(data[data.length - 1].length === 2){
+      data.push([]);
+      addComment();
+    } else {
+      container.innerHTML = '';
+      data[data.length - 1].push({
+        rating: ratingValue, 
+        comment: commentTextarea.value
+      });
+      data.forEach((page) => {
+        const commentPage = document.createElement('div');
+        container.append(commentPage);
+        page.forEach((comment)=> {
+          commentPage.append(createComment(comment, isFeedback));
+        })
+      });
+      ratingValue = '';
+      commentTextarea.value = '';
+      ratingInput.forEach(el => el.checked = false);
+      removeDisplayBlock(modalWindowForComments);
+      quantity.innerHTML = [].concat(...data).length;
+    }  
+  } else return;
+};
+
+const init = () => {
+  languageDropdownMenu.addEventListener('click', changeLanguage);
+  languageSelect.addEventListener('click', openDropdownMenu);
+
+  mobileDropdownBtn.addEventListener('click', (event) => {
+    if(event.target.classList.contains('show-dropdown-mobile-menu')){
+      if(mobileDropdownMenu.style.height < '20px') {
+        mobileDropdownMenu.style.height = '330px';
+      } else {
+        mobileDropdownMenu.style.height = '0px';
+      }
+    }
+  })
+
+  closeModalWindowCross.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));
+  getCouponBtn.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));
+  cancelModalWindowBtn.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));
+  getGiftsBtn.forEach(el => el.addEventListener('click',  () => addDisplayBlock(modalWindowForGifts)));
+
+  giveFeedbackBtn.addEventListener('click', () => addDisplayBlock(modalWindowForComments));
+  modalCommentsheader.addEventListener('click', (event)=> {
+    if(event.target.classList.contains('give-feedback-page') || 
+        event.target.classList.contains('ask-question-page') &&
+        !event.target.classList.contains('active-comment')) {
+          toggleStilesToCommentPageElements();
+    }
+  })
+
+  commentsHeader.addEventListener('click', (event) => {
+    if(event.target.classList.contains('comments__header') || 
+        event.target.classList.contains('questions__header') &&
+        !event.target.classList.contains('font-weight-bold')) {
+          toggleStilesToCommentPageElements();
+    }
+  })
+
+  modalWindowCommentsCancelBtn.addEventListener('click', () => {
+    ratingValue = '';
+    feedbackTextarea.value = '';
+    questionTextarea.value = '';
+    ratingInput.forEach(el => el.checked = false);
+    removeDisplayBlock(modalWindowForComments)
+  });
+  modalWindowCommentsCross.addEventListener('click', () => {
+    ratingValue = '';
+    feedbackTextarea.value = '';
+    questionTextarea.value = '';   
+    ratingInput.forEach(el => el.checked = false);
+    removeDisplayBlock(modalWindowForComments)
+  });
+  ratingInput.forEach(el => el.addEventListener('click', (e) => {
+    ratingValue = e.target.value; 
+  }));
+
+  sendCommentBtn.addEventListener('click', () => { 
+    addComment(questionContentBlock.classList.contains('display-none'))
+  });
+
+  window.addEventListener('click', () => {
+    if(isContainsDisplayBlock(languageDropdownMenu)) {
+      removeDisplayBlock(languageDropdownMenu);
+    }
+  })
+}
+
+document.addEventListener("DOMContentLoaded", init)
+
