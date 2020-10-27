@@ -5,13 +5,15 @@ $(document).ready(() => {
     prevArrow: $('.mercedes-amg-container__prev-arrow'),
     nextArrow: $('.mercedes-amg-container__next-arrow'),
     responsive: [{
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 2,
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+        },
       },
-      breakpoint: 800,
-      settings: "unslick",  
-    },
+      {
+        breakpoint: 500,
+          settings: "unslick",  
+      },
     ]
   });
   $('.sales-container__slider').slick({
@@ -20,15 +22,18 @@ $(document).ready(() => {
     prevArrow: $(".sales-container__prev-arrow"),
     nextArrow: $(".sales-container__next-arrow"),
     responsive: [{
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-      },
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 2,
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      }, 
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+        },
       }
-    }]
+    ]
   });
   setLanguage();
 });
