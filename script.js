@@ -134,6 +134,14 @@ const addComment = (isFeedback) => {
 languageDropdownMenu.addEventListener('click', changeLanguage);
 languageSelect.addEventListener('click', openDropdownMenu);
 
+mobileDropdownBtn.addEventListener('click', () => {
+  if(mobileDropdownMenu.style.height < '20px') {
+    mobileDropdownMenu.style.height = '330px';
+  } else {
+    mobileDropdownMenu.style.height = '0px';
+  }
+})
+
 closeModalWindowCross.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));
 getCouponBtn.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));
 cancelModalWindowBtn.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));

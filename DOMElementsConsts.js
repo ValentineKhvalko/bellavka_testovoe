@@ -5,6 +5,10 @@ const currentFlag = document.querySelector('.language-select__current-flag');
 const languageDropdownMenu = document.querySelector('.language-select__dropdown-menu');
 const languageSelect = document.querySelector('.language-select');
 
+//Mobile dropdown menu
+const mobileDropdownBtn = document.querySelector('.show-dropdown-mobile-menu');
+const mobileDropdownMenu = document.querySelector('.dropdown-menu-mobile');
+
 //Btns
 const getGiftsBtn = document.querySelector('.gifts-container__btn');
 const getCouponBtn = document.querySelector('.gifts-container__btn-get');
