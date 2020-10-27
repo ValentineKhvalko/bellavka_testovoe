@@ -2,15 +2,11 @@ let ratingValue = '';
 let currentLanguage;
 let prevLanguage;
 
-numberOfComments.innerHTML = [].concat(...commentsData).length;
-numberOfQuestions.innerHTML = [].concat(...questionData).length;
+numberOfComments.innerHTML = commentsData.length;
+numberOfQuestions.innerHTML = questionData.length;
 
-commentsData.forEach((page) => {
-  const commentPage = document.createElement('div');
-  commentsContainer.append(commentPage);
-  page.forEach((comment)=> {
-    commentPage.append(createComment(comment, true));
-  });
+commentsData.forEach((comment) => {
+  commentsContainer.append(createComment(comment, true));
 })
 
 const setLanguage = () => { 
@@ -48,6 +44,26 @@ isContainsDisplayBlock = (elem) => {
   return elem.classList.contains('display-block');
 }; 
 
+const addComment = (isFeedback) => {
+  const commentTextarea = isFeedback ? feedbackTextarea : questionTextarea;
+  const container = isFeedback ? commentsContainer : questionContainer;
+  const quantity = isFeedback ? numberOfComments : numberOfQuestions;
+  if(commentTextarea.value) {
+    const data = isFeedback ? commentsData : questionData;
+    const comment = {
+      rating: ratingValue, 
+      comment: commentTextarea.value
+    }
+    data.push(comment);
+    container.append(createComment(comment, isFeedback));
+    ratingValue = '';
+    commentTextarea.value = '';
+    ratingInput.forEach(el => el.checked = false);
+    removeDisplayBlock(modalWindowForComments);
+    quantity.innerHTML = data.length;
+  } else return;
+};
+
 const toggleStilesToCommentPageElements = () => {
   modalFeedbackPage.classList.toggle('active-comment');
   modalQuestionPage.classList.toggle('active-comment');
@@ -59,37 +75,13 @@ const toggleStilesToCommentPageElements = () => {
   questionContainer.classList.toggle('display-none');
 }
 
-const addComment = (isFeedback) => {
-  const commentTextarea = isFeedback ? feedbackTextarea : questionTextarea;
-  const container = isFeedback ? commentsContainer : questionContainer;
-  const quantity = isFeedback ? numberOfComments : numberOfQuestions;
-  if(commentTextarea.value) {
-    const data = isFeedback ? commentsData : questionData;
-
-    if(data[data.length - 1].length === 2){
-      data.push([]);
-      addComment();
-    } else {
-      container.innerHTML = '';
-      data[data.length - 1].push({
-        rating: ratingValue, 
-        comment: commentTextarea.value
-      });
-      data.forEach((page) => {
-        const commentPage = document.createElement('div');
-        container.append(commentPage);
-        page.forEach((comment)=> {
-          commentPage.append(createComment(comment, isFeedback));
-        })
-      });
-      ratingValue = '';
-      commentTextarea.value = '';
-      ratingInput.forEach(el => el.checked = false);
-      removeDisplayBlock(modalWindowForComments);
-      quantity.innerHTML = [].concat(...data).length;
-    }  
-  } else return;
-};
+const resetModalWindowComments = () => {
+  ratingValue = '';
+  feedbackTextarea.value = '';
+  questionTextarea.value = '';
+  ratingInput.forEach(el => el.checked = false);
+  removeDisplayBlock(modalWindowForComments)
+}
 
 const init = () => {
   languageDropdownMenu.addEventListener('click', changeLanguage);
@@ -127,20 +119,9 @@ const init = () => {
     }
   })
 
-  modalWindowCommentsCancelBtn.addEventListener('click', () => {
-    ratingValue = '';
-    feedbackTextarea.value = '';
-    questionTextarea.value = '';
-    ratingInput.forEach(el => el.checked = false);
-    removeDisplayBlock(modalWindowForComments)
-  });
-  modalWindowCommentsCross.addEventListener('click', () => {
-    ratingValue = '';
-    feedbackTextarea.value = '';
-    questionTextarea.value = '';   
-    ratingInput.forEach(el => el.checked = false);
-    removeDisplayBlock(modalWindowForComments)
-  });
+  modalWindowCommentsCancelBtn.addEventListener('click', resetModalWindowComments);
+  modalWindowCommentsCross.addEventListener('click', resetModalWindowComments);
+
   ratingInput.forEach(el => el.addEventListener('click', (e) => {
     ratingValue = e.target.value; 
   }));
