@@ -98,7 +98,7 @@
 }
 
 .show-dropdown-mobile-menu svg{
- padding-left: 10px;
+  padding-left: 10px;
 }
 
 .tool-bar {
@@ -167,6 +167,7 @@
   flex-direction: column;
   text-align: right;
   justify-content: center;
+  user-select: none;
 }
 
 .banner__sale {
@@ -341,6 +342,12 @@
   text-align: center;
   background: #ED0000;
   border-radius: 2px;
+  cursor: pointer;
+}
+
+.sales-container__all-products:hover {
+  background: #ff5741;
+  color: rgb(212, 212, 212);
 }
 
 .gifts-container__header {
@@ -467,8 +474,8 @@
 
 .gifts-container__btn {
   text-align: center;
-  margin: 30px 85px 25px;
-  padding: 10px 30px;
+  margin: 30px 60px 25px;
+  padding: 10px 55px;
 }
 
 .points {
@@ -783,6 +790,11 @@
   font-size: 16px;
 }
 
+.plug {
+  padding: 45px;
+  font-family: 'Roboto-bold';
+}
+
 .give-feedback-btn-container {
   display: flex;
   justify-content: flex-end;
@@ -1004,6 +1016,9 @@
 
   .mercedes-amg-container__slider {
     margin: 25px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .mercedes-amg-container__slider-element {
@@ -1034,7 +1049,7 @@
 
   .sales-container__slider-container {
     overflow: hidden;
-    max-width: 355px;
+    max-width: 100%;
   }
 
   .sales-container__slider {
@@ -1075,6 +1090,15 @@
     padding: 30px 50px 25px;
   }
 
+  .gifts-container-for-new-users__content {
+    display: block;
+  }
+
+  .gifts-container__btn {
+    margin: 30px 85px 25px;
+    padding: 10px 30px;
+  }
+
   .articles {
     padding: 15px 0;
     display: block;
@@ -1100,7 +1124,7 @@
     min-width: 0;
     width: 167px;
     height: 160px;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
 
   .articles__articles-about-us__content {

@@ -10,7 +10,7 @@ const mobileDropdownBtn = document.querySelector('.show-dropdown-mobile-menu');
 const mobileDropdownMenu = document.querySelector('.dropdown-menu-mobile');
 
 //Btns
-const getGiftsBtn = document.querySelector('.gifts-container__btn');
+const getGiftsBtn = document.querySelectorAll('.gifts-container__btn');
 const getCouponBtn = document.querySelector('.gifts-container__btn-get');
 const cancelModalWindowBtn = document.querySelector('.gifts-container__btn-cancel');
 const giveFeedbackBtn = document.querySelector('.give-feedback-btn');
@@ -41,4 +41,13 @@ const modalFeedbackPage = document.querySelector('.give-feedback-page');
 const modalQuestionPage = document.querySelector('.ask-question-page');
 
 const commentContetntBlock = document.querySelector('.modal-window-for-comment__content');
-const questionContentBlock = document.querySelector('.modal-window-for-question__content')
+const questionContentBlock = document.querySelector('.modal-window-for-question__content');
+
+const unknownAvatarImg = './assets/img/avatar.png';
+const svgStarLayout = (fill) => {
+  return `
+    <svg width="15" height="15" viewBox="0 0 43 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.5 0L28.1126 13.3986L42.8988 15.5471L32.1994 25.9764L34.7252 40.7029L21.5 33.75L8.27483 40.7029L10.8006 25.9764L0.101229 15.5471L14.8874 13.3986L21.5 0Z" fill="${fill}"/>
+    </svg>
+  ` 
+} 

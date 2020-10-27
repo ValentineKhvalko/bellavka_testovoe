@@ -76,8 +76,8 @@
   <ul class="nav-mobile">
     <li class="nav-mobile__li">Топ продаж</li>
     <li class="nav-mobile__li">Новинки</li>
-    <li class="nav-mobile__li show-dropdown-mobile-menu">
-      <span>
+    <li class="nav-mobile__li">
+      <span class="show-dropdown-mobile-menu">
         Unsere Modelle
         <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.03926 0.905528C0.8296 0.725817 0.51395 0.750098 0.334239 0.959761C0.154528 1.16942 0.178809 1.48507 0.388471 1.66478L1.03926 0.905528ZM4.71387 4.71373L4.38847 5.09336C4.57572 5.25385 4.85202 5.25385 5.03926 5.09336L4.71387 4.71373ZM9.03926 1.66478C9.24893 1.48507 9.27321 1.16942 9.0935 0.959761C8.91378 0.750098 8.59813 0.725817 8.38847 0.905528L9.03926 1.66478ZM0.388471 1.66478L4.38847 5.09336L5.03926 4.3341L1.03926 0.905528L0.388471 1.66478ZM5.03926 5.09336L9.03926 1.66478L8.38847 0.905528L4.38847 4.3341L5.03926 5.09336Z" fill="#1F1F1F"/>
@@ -581,7 +581,9 @@
       </div>
       <div class="comments-and-questions-continer__content">
         <div class="comments"></div>
-        <div class="questions display-none"></div>
+        <div class="questions display-none">
+          <p class="plug">Здесь будут отображаться ваши вопросы</p>
+        </div>
       </div>
       <div class="give-feedback-btn-container">
         <div class="give-feedback-btn btn">Оставить отзыв</div>
@@ -666,6 +668,7 @@
   <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
   <script src="sliders.js"></script> 
   <script src="data.js"></script>
+  <script src="units.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
