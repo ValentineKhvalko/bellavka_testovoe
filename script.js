@@ -104,16 +104,16 @@ const init = () => {
 
   giveFeedbackBtn.addEventListener('click', () => addDisplayBlock(modalWindowForComments));
   modalCommentsheader.addEventListener('click', (event)=> {
-    if(event.target.classList.contains('give-feedback-page') || 
-        event.target.classList.contains('ask-question-page') &&
+    if((event.target.classList.contains('give-feedback-page') || 
+        event.target.classList.contains('ask-question-page')) &&
         !event.target.classList.contains('active-comment')) {
           toggleStilesToCommentPageElements();
     }
   })
 
   commentsHeader.addEventListener('click', (event) => {
-    if(event.target.classList.contains('comments__header') || 
-        event.target.classList.contains('questions__header') &&
+    if((event.target.classList.contains('comments__header') || 
+        event.target.classList.contains('questions__header')) &&
         !event.target.classList.contains('font-weight-bold')) {
           toggleStilesToCommentPageElements();
     }
