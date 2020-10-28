@@ -132,13 +132,16 @@
 
 .language-select__dropdown-menu {
   width: 120px;
+  height: 0px;
   background-color: #000;
   font-family: 'Roboto-regular';
   color: #fff;
-  display: none;
   position: absolute;
   top: 50px;
   border-radius: 2px;
+  overflow: hidden;
+
+  transition: height .3s;
 }
 
 .language-select__dropdown-menu__li {
@@ -1234,6 +1237,10 @@
 
 .rotate-arrow {
   transform: rotate(90deg);
+}
+
+.language-select-height {
+  height: 115px;
 }
 
 .display-block {
