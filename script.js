@@ -29,6 +29,7 @@ const openDropdownMenu = (event) => {
   } else {
     languageDropdownMenu.classList.remove('display-block');
   }
+  currentFlagArrow.classList.toggle('rotate-arrow');
   event.stopPropagation();
 }
 
@@ -90,8 +91,10 @@ const init = () => {
   mobileDropdownBtn.addEventListener('click', (event) => {
     if(event.target.classList.contains('show-dropdown-mobile-menu')){
       if(mobileDropdownMenu.style.height < '20px') {
+        mobileDropdownArrow.classList.toggle('rotate-arrow');
         mobileDropdownMenu.style.height = '330px';
       } else {
+        mobileDropdownArrow.classList.toggle('rotate-arrow');
         mobileDropdownMenu.style.height = '0px';
       }
     }
@@ -133,6 +136,7 @@ const init = () => {
   window.addEventListener('click', () => {
     if(isContainsDisplayBlock(languageDropdownMenu)) {
       removeDisplayBlock(languageDropdownMenu);
+      currentFlagArrow.classList.remove('rotate-arrow');
     }
   })
 }

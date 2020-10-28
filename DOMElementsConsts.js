@@ -4,10 +4,12 @@ const languages = document.querySelectorAll('.language-select__dropdown-menu__li
 const currentFlag = document.querySelector('.language-select__current-flag');
 const languageDropdownMenu = document.querySelector('.language-select__dropdown-menu');
 const languageSelect = document.querySelector('.language-select');
+const currentFlagArrow = document.querySelector('.current-flag__arrow');
 
 //Mobile dropdown menu
 const mobileDropdownBtn = document.querySelector('.show-dropdown-mobile-menu');
 const mobileDropdownMenu = document.querySelector('.dropdown-menu-mobile');
+const mobileDropdownArrow = document.querySelector('.dropdown-mobile-menu__arrow');
 
 //Btns
 const getGiftsBtn = document.querySelectorAll('.gifts-container__btn');
