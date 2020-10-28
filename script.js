@@ -5,8 +5,12 @@ let prevLanguage;
 numberOfComments.innerHTML = commentsData.length;
 numberOfQuestions.innerHTML = questionData.length;
 
-commentsData.forEach((comment) => {
-  commentsContainer.append(createComment(comment, true));
+commentsData.forEach((page) => {
+  const commentPage = document.createElement('div');
+  commentsContainer.append(commentPage)
+  page.forEach(comment => {
+    commentPage.append(createComment(comment, true));
+  })
 })
 
 const setLanguage = () => { 
@@ -44,27 +48,56 @@ isContainsDisplayBlock = (elem) => {
   return elem.classList.contains('display-block');
 }; 
 
-const addComment = (isFeedback) => {
+// const addComment = (isFeedback) => {
+//   const commentTextarea = isFeedback ? feedbackTextarea : questionTextarea;
+//   const container = isFeedback ? commentsContainer : questionContainer;
+//   const quantity = isFeedback ? numberOfComments : numberOfQuestions;
+//   if(commentTextarea.value) {
+//     const data = isFeedback ? commentsData : questionData;
+//     const comment = {
+//       rating: ratingValue, 
+//       comment: commentTextarea.value
+//     }
+//     data.push(comment);
+//     container.append(createComment(comment, isFeedback));
+//     ratingValue = '';
+//     commentTextarea.value = '';
+//     ratingInput.forEach(el => el.checked = false);
+//     removeDisplayBlock(modalWindowForComments);
+//     quantity.innerHTML = data.length;
+//   } else return;
+// };
+
+const addComment = (isFeedback, slideIndex) => {
   const commentTextarea = isFeedback ? feedbackTextarea : questionTextarea;
   const container = isFeedback ? commentsContainer : questionContainer;
   const quantity = isFeedback ? numberOfComments : numberOfQuestions;
   if(commentTextarea.value) {
     const data = isFeedback ? commentsData : questionData;
+    const commentPage = document.createElement('div');
     const comment = {
       rating: ratingValue, 
       comment: commentTextarea.value
     }
-    data.push(comment);
-    container.append(createComment(comment, isFeedback));
+    slideIndex++;
+    if(data[data.length - 1].length === 2){
+      data.push([]);
+      $('.comments').slick('slideAdd', commentPage);
+      data[data.length - 1].push(comment);
+      commentPage.append(createComment(comment, isFeedback));
+    } else {
+      data[data.length - 1].push(comment);
+      commentPage.append(createComment(comment, isFeedback));
+    } 
     ratingValue = '';
     commentTextarea.value = '';
     ratingInput.forEach(el => el.checked = false);
     removeDisplayBlock(modalWindowForComments);
-    quantity.innerHTML = data.length;
+    quantity.innerHTML = [].concat(...data).length; 
   } else return;
 };
 
-const toggleStilesToCommentPageElements = () => {
+const toggleStylesToCommentPageElements = () => {
   modalFeedbackPage.classList.toggle('active-comment');
   modalQuestionPage.classList.toggle('active-comment');
   commentContetntBlock.classList.toggle('display-none');
@@ -87,15 +120,13 @@ const init = () => {
   languageDropdownMenu.addEventListener('click', changeLanguage);
   languageSelect.addEventListener('click', openDropdownMenu);
 
-  mobileDropdownBtn.addEventListener('click', (event) => {
-    if(event.target.classList.contains('show-dropdown-mobile-menu')){
-      if(mobileDropdownMenu.style.height < '20px') {
-        mobileDropdownMenu.style.height = '330px';
-      } else {
-        mobileDropdownMenu.style.height = '0px';
-      }
+  mobileDropdownBtn.addEventListener('click', () => {
+    if(mobileDropdownMenu.style.height < '20px') {
+      mobileDropdownMenu.style.height = '330px';
+    } else {
+      mobileDropdownMenu.style.height = '0px';
     }
-  })
+  });
 
   closeModalWindowCross.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));
   getCouponBtn.addEventListener('click', () => removeDisplayBlock(modalWindowForGifts));
@@ -126,9 +157,9 @@ const init = () => {
     ratingValue = e.target.value; 
   }));
 
-  sendCommentBtn.addEventListener('click', () => { 
-    addComment(questionContentBlock.classList.contains('display-none'))
-  });
+  // sendCommentBtn.addEventListener('click', () => { 
+  //   addComment(questionContentBlock.classList.contains('display-none'))
+  // });
 
   window.addEventListener('click', () => {
     if(isContainsDisplayBlock(languageDropdownMenu)) {

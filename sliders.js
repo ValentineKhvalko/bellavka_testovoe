@@ -35,5 +35,14 @@ $(document).ready(() => {
       }
     ]
   });
+  $('.comments').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: $(".comment__prev-arrow"),
+    nextArrow: $(".comment__next-arrow"),
+  });
+  $('.modal-window-for-comment__send-btn').on('click', (slideIndex) => { 
+    addComment(true, slideIndex);
+  })
   setLanguage();
 });

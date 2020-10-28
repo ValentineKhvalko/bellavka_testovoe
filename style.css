@@ -735,6 +735,7 @@
 }
 
 .comments-and-questions-continer {
+  position: relative;
   font-family: 'Roboto-regular';
 }
 
@@ -767,8 +768,8 @@
 
 .comments-and-questions-continer__content__crosses {
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 70px;
+  top: 100px;
   z-index: 10;
 }
 
