@@ -41,3 +41,16 @@ const createComment = (comment, isFeedback) => {
 
   return commentContainer;
 }
+
+const isLessThanTen = (number, isFirstNumber) => {
+  if(isFirstNumber) {
+    return number < 10 ? '0' : String(number).split('')[0]
+  } else {
+    return number < 10 ? String(number) : String(number).split('')[1]
+  };
+}
+
+
+const iteratingOverTimerElementsAndInsertingNumbers = (elements, number) => {
+  elements.forEach(elem => elem.innerHTML = number);
+}

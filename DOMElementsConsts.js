@@ -11,6 +11,14 @@ const mobileDropdownBtn = document.querySelector('.show-dropdown-mobile-menu');
 const mobileDropdownMenu = document.querySelector('.dropdown-menu-mobile');
 const mobileDropdownArrow = document.querySelector('.dropdown-mobile-menu__arrow');
 
+//Sales timer
+const hourFirstSymbol = document.querySelectorAll('.hour__first-symbol');
+const hourSecondSymbol = document.querySelectorAll('.hour__second-symbol');
+const minuteFirstSymdol = document.querySelectorAll('.minute__first-symbol');
+const minuteSecondSymdol = document.querySelectorAll('.minute__second-symbol');
+const secondFirstSymbol = document.querySelectorAll('.second__first-symbol');
+const secondSecondSymbol = document.querySelectorAll('.second__second-symbol');
+ 
 //Btns
 const getGiftsBtn = document.querySelectorAll('.gifts-container__btn');
 const getCouponBtn = document.querySelector('.gifts-container__btn-get');
