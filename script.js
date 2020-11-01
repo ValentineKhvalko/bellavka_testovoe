@@ -2,6 +2,36 @@ let ratingValue = '';
 let currentLanguage;
 let prevLanguage;
 
+const dysplaingTimeForTheEndOfTheDiscount = () => {
+  const currentTime = new Date();
+  const discountEndTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), 23, 59, 59);
+  const hours = discountEndTime.getHours() - currentTime.getHours();
+  const minute = discountEndTime.getMinutes() - currentTime.getMinutes();
+  const seconds = discountEndTime.getSeconds() - currentTime.getSeconds();
+
+  const validTime = {
+    hoursFirst: isLessThanTen(hours, true),
+    hoursSecond: isLessThanTen(hours, false),
+    minuteFirst: isLessThanTen(minute, true),
+    minuteSecond: isLessThanTen(minute, false),
+    secondFirst: isLessThanTen(seconds, true),
+    secondSecond: isLessThanTen(seconds, false)
+  }
+
+  iteratingOverTimerElementsAndInsertingNumbers(hourFirstSymbol, validTime.hoursFirst);
+  iteratingOverTimerElementsAndInsertingNumbers(hourSecondSymbol, validTime.hoursSecond);
+  iteratingOverTimerElementsAndInsertingNumbers(minuteFirstSymdol, validTime.minuteFirst);
+  iteratingOverTimerElementsAndInsertingNumbers(minuteSecondSymdol, validTime.minuteSecond);
+  iteratingOverTimerElementsAndInsertingNumbers(secondFirstSymbol, validTime.secondFirst);
+  iteratingOverTimerElementsAndInsertingNumbers(secondSecondSymbol, validTime.secondSecond);
+}
+
+setInterval(() => {
+  dysplaingTimeForTheEndOfTheDiscount()
+}, 1000);
+
+
+
 numberOfComments.innerHTML = commentsData.length;
 numberOfQuestions.innerHTML = questionData.length;
 
